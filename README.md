@@ -16,7 +16,7 @@ Background
 ----------
 This application was created as an internal project for [Futurice's](http://www.futurice.com) office in Helsinki and nowadays it is used at every Futurice office. It was open sourced as a part of the [Summer of Love program](http://blog.futurice.com/summer-of-love-of-open-source).
 
-Reservator is now [available for free on Google Play](https://play.google.com/store/apps/details?id=com.futurice.android.reservator),
+Reservator is now [available for free on Google Play](https://play.google.com/store/apps/details?id=it.necst.android.reservator),
 and we've [written about it in Futurice blog](http://blog.futurice.com/reservator) too.
 
 About Futurice

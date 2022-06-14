@@ -9,7 +9,7 @@
         android:background="#fff"
         android:padding="10dip">
 
-        <com.futurice.android.reservator.view.WeekView
+        <it.necst.android.reservator.view.WeekView
             android:id="@+id/weekView1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -26,7 +26,7 @@
                 android:layout_marginBottom="0dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp" />
-        </com.futurice.android.reservator.view.WeekView>
+        </it.necst.android.reservator.view.WeekView>
 
         <TextView
             android:id="@+id/roomNameLabel"
@@ -54,7 +54,7 @@
             android:textColor="@android:color/white" />
     </RelativeLayout>
 
-    <com.futurice.android.reservator.view.RoomTrafficLights
+    <it.necst.android.reservator.view.RoomTrafficLights
         android:id="@+id/roomTrafficLights"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -1,0 +1,62 @@
+package it.necst.android.reservator.view;
+
+import it.necst.android.reservator.R;
+import it.necst.android.reservator.model.Room;
+import it.necst.android.reservator.model.TimeSpan;
+import it.necst.android.reservator.view.LobbyReservationRowView.OnCancellListener;
+import it.necst.android.reservator.view.LobbyReservationRowView.OnReserveListener;
+
+import android.app.Dialog;
+import android.content.Context;
+import android.view.View;
+import android.widget.RelativeLayout;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class RoomReservationPopup extends Dialog {
+    @BindView(R.id.roomReservationView1)
+    LobbyReservationRowView reservationView;
+    @BindView(R.id.container_reservation_popup)
+    RelativeLayout popupContainer;
+
+    public RoomReservationPopup(Context context, TimeSpan timeLimits, TimeSpan presetTime, Room room) {
+        super(context, R.style.Theme_Transparent);
+        setCancelable(true);
+        setContentView(R.layout.reservation_popup);
+        ButterKnife.bind(this);
+
+        popupContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cancel();
+            }
+        });
+        reservationView.setAnimationDuration(0);
+        reservationView.setClickable(true);
+        reservationView.setRoom(room);
+        reservationView.resetTimeSpan();
+        reservationView.setMinTime(timeLimits.getStart());
+        reservationView.setMaxTime(timeLimits.getEnd());
+        reservationView.timePicker2.setStartTime(presetTime.getStart());
+        reservationView.timePicker2.setEndTime(presetTime.getEnd());
+        reservationView.setEndTimeRelatively(60);
+        reservationView.setOnCancellListener(new OnCancellListener() {
+            @Override
+            public void onCancel(LobbyReservationRowView view) {
+                cancel();
+            }
+        });
+        reservationView.setOnReserveCallback(new OnReserveListener() {
+            @Override
+            public void call(LobbyReservationRowView v) {
+                cancel();
+            }
+        });
+        reservationView.setReserveMode();
+    }
+
+    public void setOnReserveCallback(OnReserveListener onReserveCallback) {
+        reservationView.setOnReserveCallback(onReserveCallback);
+    }
+}

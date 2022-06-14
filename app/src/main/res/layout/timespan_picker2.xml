@@ -15,7 +15,7 @@
         android:src="@drawable/minus_icon"
         android:contentDescription="@string/minus_time_content_description" />
 
-    <com.futurice.android.reservator.view.TimeBarView
+    <it.necst.android.reservator.view.TimeBarView
         android:id="@+id/timeBarView"
         android:layout_width="10dp"
         android:layout_height="50dp"
